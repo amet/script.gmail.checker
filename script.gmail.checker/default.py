@@ -2,21 +2,21 @@
 import os
 import sys
 import xbmcaddon
+
+__author__     = "amet"
+__scriptid__   = "script.gmail.checker"
 __scriptname__ = "GmailChecker"
-__author__ = "Amet"
-__url__ = ""
-__svn_url__ = ""
-__credits__ = ""
-__version__ = "1.0.4"
-__XBMC_Revision__ = "22240"
 
+__addon__      = xbmcaddon.Addon(id=__scriptid__)
 
-__settings__   = xbmcaddon.Addon(id='script.gmail.checker')
-__language__   = __settings__.getLocalizedString
-__cwd__        = __settings__.getAddonInfo('path')
+__cwd__        = __addon__.getAddonInfo('path')
+__version__    = __addon__.getAddonInfo('version')
+__language__   = __addon__.getLocalizedString
 
-BASE_RESOURCE_PATH = xbmc.translatePath( os.path.join( __cwd__, 'resources', 'lib' ) )
-sys.path.append (BASE_RESOURCE_PATH)
+__profile__    = xbmc.translatePath( __addon__.getAddonInfo('profile') )
+__resource__   = xbmc.translatePath( os.path.join( __cwd__, 'resources', 'lib' ) )
+
+sys.path.append (__resource__)
 
 if __name__ == "__main__":
     import gui
