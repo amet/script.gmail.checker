@@ -77,7 +77,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
 class _FancyURLopener(urllib.FancyURLopener):
     def __init__(self, usr, pwd, prx={}):
       urllib.FancyURLopener.__init__(self,prx)
-      self.usr = usr
+      self.usr = usr.split("@")[0]
       self.pwd = pwd
         
     def prompt_user_passwd(self, host, realm):
